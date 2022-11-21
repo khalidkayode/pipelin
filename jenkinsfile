@@ -1,21 +1,13 @@
 pipeline {
-agent any
-
-stages {
-stage('build') {
-steps {
-echo 'Building'
-}
-}
-stage ('test') {
-steps {
-echo 'testing'
-}
-}
-stage('deploy') {
-steps {
-echo 'deploying'
-}
-}
-}
+  agent any
+ 
+  tools {nodejs "nodejs"}
+ 
+  stages {
+    stage(‘Example’) {
+      steps {
+        sh 'npm --version'
+      }
+    }
+  }
 }
